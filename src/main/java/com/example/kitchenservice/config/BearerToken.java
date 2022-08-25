@@ -1,5 +1,9 @@
 package com.example.kitchenservice.config;
 
+import com.example.kitchenservice.entity.Worker;
+import com.example.kitchenservice.entity.enums.WorkerType;
+import com.example.kitchenservice.repository.WorkerRepository;
+import com.sun.research.ws.wadl.HTTPMethods;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Configuration;
@@ -14,6 +18,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 public class BearerToken  extends WebSecurityConfigurerAdapter {
      private final UserDetailsService userDetailsService;
      private final BCryptPasswordEncoder bCryptPasswordEncoder;
+     private  final WorkerType workerType;
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
@@ -22,12 +27,15 @@ public class BearerToken  extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
+
        http
                .csrf()
                .disable()
                .cors()
-               .disable()
-               .antMatcher()
+               .disable();
+
+
+               // ERTAGA TUGATISH SHART!!!
     }
 
 }
