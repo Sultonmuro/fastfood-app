@@ -24,7 +24,9 @@ public class Filter implements UserDetailsService {
             throw  new UsernameNotFoundException("Worker not Found");
         }else {
             log.info("Worker successfully found in db {}",workerName);
+
         }
         return (UserDetails) new Worker(worker.getUsername(),worker.getPhone(),worker.getSalary(),worker.isActive(),worker.getWorkerType(),worker.getFilial(),worker.getOrderList());
     }
+
 }

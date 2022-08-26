@@ -16,16 +16,17 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 @EnableWebSecurity @Configuration @Slf4j @RequiredArgsConstructor
 public class BearerToken  extends WebSecurityConfigurerAdapter {
      private final UserDetailsService userDetailsService;
-     private final BCryptPasswordEncoder bCryptPasswordEncoder;
-     private  final WorkerType workerType;
+     private final PasswordEncoder passwordEncoder;
+
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-       auth.userDetailsService(userDetailsService).passwordEncoder(bCryptPasswordEncoder);
+       auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder);
     }
 
     @Override
@@ -35,12 +36,14 @@ public class BearerToken  extends WebSecurityConfigurerAdapter {
        http.authorizeRequests().anyRequest().hasRole("CHEF");
        http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
        http.addFilter(new AuthFilter(authenticationManagerBean()));
-       // ERTAGA TUGATISH SHART!!! >finished<
+
     }
+
     @Bean
     @Override
     public AuthenticationManager authenticationManagerBean() throws  Exception{
         return super.authenticationManagerBean();
+
     }
 
 }

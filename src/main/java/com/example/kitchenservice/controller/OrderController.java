@@ -60,6 +60,7 @@ public class OrderController {
       Order order = orderRepository.findById(id).orElseThrow(() -> new RuntimeException("Id not found "));
       orderRepository.delete(order);
    return   ApiResponse.builder().message("DELETED").success(true).build();
+
   }
 
 
