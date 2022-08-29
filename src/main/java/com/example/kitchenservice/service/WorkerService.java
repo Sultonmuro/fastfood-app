@@ -1,12 +1,12 @@
 package com.example.kitchenservice.service;
 
-import com.example.kitchenservice.entity.Worker;
-import com.example.kitchenservice.entity.enums.WorkerType;
+import com.example.kitchenservice.dto.ApiResponse;
 import org.springframework.stereotype.Service;
 
 @Service
 public interface WorkerService {
-      void  createWorker(Worker worker);
+    ApiResponse<Object> createWorker();
+
 
 
 }

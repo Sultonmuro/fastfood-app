@@ -3,7 +3,6 @@ package com.example.kitchenservice.config;
 import com.example.kitchenservice.entity.Worker;
 import com.example.kitchenservice.entity.enums.WorkerType;
 import com.example.kitchenservice.repository.WorkerRepository;
-import com.sun.research.ws.wadl.HTTPMethods;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Bean;

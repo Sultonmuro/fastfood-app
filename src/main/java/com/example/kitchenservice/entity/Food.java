@@ -21,7 +21,7 @@ public class Food extends AbsEntity {
      private Double price;
      private Byte photo;
      private Long rate;
-   @ManyToOne
-     @JoinColumn(name = "foodList")
-     private Menu menu;
+     @ManyToOne
+    @JoinColumn(name = "foodList")
+    private Menu menu;
 }

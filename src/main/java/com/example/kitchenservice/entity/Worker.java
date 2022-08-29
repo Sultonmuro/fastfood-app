@@ -30,6 +30,5 @@ public class Worker extends AbsNameEntity {
     private WorkerType workerType;
  @OneToOne
     private Filial filial;
- @OneToMany
-    private List<Order> orderList;
+
 }

@@ -34,4 +34,7 @@ public class Order extends AbsEntity {
     private Date orderFinishedAt ;
 
 
+
+
+
 }

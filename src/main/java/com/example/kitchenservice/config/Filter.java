@@ -26,7 +26,7 @@ public class Filter implements UserDetailsService {
             log.info("Worker successfully found in db {}",workerName);
 
         }
-        return (UserDetails) new Worker(worker.getUsername(),worker.getPhone(),worker.getSalary(),worker.isActive(),worker.getWorkerType(),worker.getFilial(),worker.getOrderList());
+        return (UserDetails) new Worker(worker.getUsername(),worker.getPhone(),worker.getSalary(),worker.isActive(),worker.getWorkerType(),worker.getFilial());
     }
 
 }
